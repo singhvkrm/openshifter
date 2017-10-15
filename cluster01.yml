@@ -1,0 +1,52 @@
+name: norway
+bastion: false
+provider: gce
+type: ocp
+release: 3.6
+installer: ansible
+
+rhsm:
+  username: viksingh@redhat.com
+  password: Mars@2015
+  pool: 8a85f9815ec91219015ec92c7d4037f0
+
+dns:
+  zone: vikramsingh-no
+  suffix: vikramsingh.no
+ssh:
+  key: openshift-key
+
+components:
+  cockpit: false
+  metrics: true
+  logging: false
+  pvs: false
+
+users:
+  - username: admin
+    password: 1qaz2wsx
+    admin: true
+  - username: user
+    password: r3dh4t
+    sudoer: true
+  - username: user
+    password: r3dh4t
+    password_type: fixed
+    generic: true
+    min: 0
+    max: 30
+
+nodes:
+  count: 2
+  infra: false
+  podsPerCore: 10
+  type: n1-standard-8
+  disk:
+    boot: 50
+    docker: 100
+
+gce:
+  account: openshifter-serviceaccount.json
+  region: europe-west3
+  zone: europe-west3-a
+  project: openshift-demo
