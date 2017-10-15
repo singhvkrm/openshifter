@@ -6,13 +6,13 @@ release: 3.6
 installer: ansible
 
 rhsm:
-  username: viksingh@redhat.com
-  password: Mars@2015
-  pool: 8a85f9815ec91219015ec92c7d4037f0
+  username: XX
+  password: XX
+  pool: XXX
 
 dns:
-  zone: vikramsingh-no
-  suffix: vikramsingh.no
+  zone: XX
+  suffix: XX
 ssh:
   key: openshift-key
 
